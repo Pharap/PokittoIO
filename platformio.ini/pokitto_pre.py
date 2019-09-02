@@ -5,7 +5,7 @@ import os
 import filecmp
 
 # Works even if the user has overrided PLATFORMIO_HOME_DIR
-home = env['PIOHOME_DIR']
+home = env['PROJECTCORE_DIR']
 
 patchPath = home + '/packages/framework-mbed/targets/TARGET_NXP/TARGET_LPC11U6X/device/TOOLCHAIN_GCC_ARM/TARGET_LPC11U68/'
 
@@ -34,7 +34,7 @@ else:
 
 #delete temporary file(s)
 if (os.path.exists(patchPath + 'startup_LPC11U68.tmp')):
-    os.remove(patchPath+'startup_LPC11U68.tmp')
+    os.remove(patchPath +'startup_LPC11U68.tmp')
 
 #get the latest linker file from github
 print("Comparing linker file LPC11U68.ld to PokittoLib repository...")
@@ -62,4 +62,4 @@ else:
 
 #delete temporary file(s)
 if (os.path.exists(patchPath + 'LPC11U68.tmp')):
-    os.remove(patchPath+'LPC11U68.tmp')
+    os.remove(patchPath +'LPC11U68.tmp')
